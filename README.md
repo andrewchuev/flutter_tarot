@@ -6,7 +6,7 @@ tarot
 
 Справочник таролога.
 
-![Home screen](assets/screenshots/main.jpg)
-![Detail screen](assets/screenshots/detail.jpg)
+<img src='assets/screenshots/main.jpg'>
+<img src='assets/screenshots/detail.jpg'>
 
 
