@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:tarot/tcard.dart';
-import 'package:tarot/database_helper.dart';
-import 'package:tarot/detail_screen.dart';
-import 'package:tarot/card_template_small_icons.dart';
-import 'package:tarot/top_menu.dart';
-
+import 'tcard.dart';
+import 'database_helper.dart';
+import 'detail_screen.dart';
+import 'card_template_small_icons.dart';
+import 'top_menu.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -68,10 +67,8 @@ class CardGroup extends StatelessWidget {
                                   )));
                     },
                   );
-
                 },
               );
-
             } else {
               return Center(child: CircularProgressIndicator());
             }

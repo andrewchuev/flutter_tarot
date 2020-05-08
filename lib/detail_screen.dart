@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tarot/tcard.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:html/dom.dart' as dom;
 
 class DetailScreen extends StatefulWidget {
   final TCard tcard;
@@ -14,22 +13,8 @@ class DetailScreen extends StatefulWidget {
 
 class _DetailScreenState extends State<DetailScreen> {
   int _selectedIndex = 0;
-  double _fontSize = 16.0;
+  double _fontSize = 18.0;
   static const TextStyle optionStyle = TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
-  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -71,18 +56,15 @@ class _DetailScreenState extends State<DetailScreen> {
           SizedBox(
             height: 15.0,
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(widget.tcard.desc.replaceAll('-:', "\n-:")),
+          ),
           Html(
             data: widget.tcard.fullDesc != null ? widget.tcard.fullDesc : '',
             defaultTextStyle: TextStyle(fontSize: _fontSize),
             padding: EdgeInsets.all(8.0),
           )
-          /*Container(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              widget.tcard.fullDesc != null ? widget.tcard.fullDesc : '',
-              style: TextStyle(fontSize: _fontSize),
-            ),
-          ),*/
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
